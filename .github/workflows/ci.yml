@@ -182,7 +182,7 @@ jobs:
           if npm view "${PKG}@${{ steps.release.outputs.current }}" version >/dev/null 2>&1; then
             echo "${PKG}@${{ steps.release.outputs.current }} already on npm — skipping publish"
           else
-            npm stage publish --provenance --access public
+            npm publish --provenance --access public
           fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
