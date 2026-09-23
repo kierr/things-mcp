@@ -61,6 +61,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      id-token: write
     # Main is protected (PRs only), so the bot cannot push version bumps
     # directly. Two-phase flow, release-please style:
     #   1. Releasable commits land on main, package.json version already
@@ -76,7 +77,10 @@ jobs:
         with:
           bun-version-file: package.json
 
-      - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
 
       - run: bun install --frozen-lockfile
 

@@ -1,6 +1,6 @@
 {
   "name": "@kkier/things-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Minimal, token-light Things 3 MCP server. Direct-SQLite reads, URL-scheme writes, native Streamable HTTP + stdio. MCP SDK v2 + Zod v4.",
   "type": "module",
   "bin": {
