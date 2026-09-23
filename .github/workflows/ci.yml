@@ -61,6 +61,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      id-token: write
     # Main is protected (PRs only), so the bot cannot push version bumps
     # directly. Two-phase flow, release-please style:
     #   1. Releasable commits land on main, package.json version already
